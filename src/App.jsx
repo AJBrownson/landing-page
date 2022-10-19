@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './App.css'
+import ReactGA from 'react-ga'
 import Apple from './assets/apple-badge.png'
 import Google from './assets/google-play-badge.png'
 
+
 function App() {
+
+  useEffect(() => {
+
+    ReactGA.initialize("UA-241149026-2");
+
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <>
